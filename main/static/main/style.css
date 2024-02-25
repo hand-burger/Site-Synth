@@ -1,0 +1,206 @@
+body {
+    /* background-color: #ebe1db; */
+    margin: auto;
+    overflow: auto;
+    background: linear-gradient(315deg, rgb(75, 177, 214), rgb(24, 202, 219));
+    animation: gradient 40s ease infinite;
+    background-size: 400% 400%;
+    background-attachment: fixed;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+.wave {
+    background: rgb(100 0 255 / 25%);
+    border-radius: 1000% 1000% 0 0;
+    position: fixed;
+    width: 200%;
+    height: 12em;
+    animation: wave 20s -8s linear infinite;
+    transform: translate3d(0, 0, 0);
+    opacity: 0.8;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.wave:nth-of-type(2) {
+    bottom: -1.25em;
+    animation: wave 18s linear reverse infinite;
+    opacity: 0.8;
+}
+
+.wave:nth-of-type(3) {
+    bottom: -2.5em;
+    animation: wave 20s -1s reverse infinite;
+    opacity: 0.9;
+}
+
+@keyframes wave {
+    2% {
+        transform: translateX(1);
+    }
+
+    25% {
+        transform: translateX(-25%);
+    }
+
+    50% {
+        transform: translateX(-50%);
+    }
+
+    75% {
+        transform: translateX(-25%);
+    }
+
+    100% {
+        transform: translateX(1);
+    }
+}
+
+#header {
+    font-family: "Didot", serif;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: normal;
+    line-height: 88px;
+    text-transform: none;
+    color: #222222;
+    margin-left: 2vw;
+}
+
+#form {
+    /* Center the input form */
+    /* margin: auto;
+    width: 50%;
+    padding: 10px;
+    margin-top: 50vh;
+    margin-bottom: 5vh;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8; */
+    /* Round corner */
+    /* border-radius: 25px;
+    padding: 20px; */
+    /* Shadow */
+    /* box-shadow: 5px 10px 18px #888888; */
+
+}
+
+#in {
+    /* Make the input take up ~80% of form */
+    /* width: 80%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box; */
+}
+
+#submit {
+    /* Make the submit button take up ~20% of form */
+    /* width: 20%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-radius: 25px; */
+}
+
+.textarea {
+    margin:auto;
+    display: block;
+    width: 50VW;
+    overflow: hidden;
+    resize: none;
+    min-height: 5vw;
+    line-height: 20px;
+    background-color: #222222;
+    border-radius: 7px;
+    text-align: center;
+    margin-top: 50vh;
+    color: #ebe1db;
+    align-items: center;
+    justify-content: center;
+}
+
+.textarea[contenteditable]:empty::before {
+    content: "What's on your mind?";
+    color: #ebe1db;
+    font-size: 30px;
+    font-family: "Didot", serif;
+    margin-top: 2vh;
+    /* Center the text within span */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+    line-height: normal;
+    
+}
+
+.textarea[contenteditable]{
+    outline: 0px solid transparent;
+}
+
+.textarea[contenteditable]:empty {
+    content: "";
+}
+
+button {
+    background:linear-gradient(315deg, rgb(2, 2, 2), rgb(2, 2, 2));
+    display: inline-block;
+    padding: 0.5em 1em;
+    margin: 0 0.3em 0.3em 0;
+    border-radius: 0.15em;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    color: #FFFFFF;
+    text-align: center;
+    transition: all 0.2s;
+    border: 1px solid #FFFFFF;
+    cursor: pointer;
+}
+
+#theButton {
+    font-size: 25px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 4rem;
+    background-color: #222222;
+    color: #ebe1db;
+    text-align: center;
+    font-family: "Didot", sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 2.5rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    z-index: 1;
+}
+
+footer a {
+    color: #ebe1db;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #ebe1db;
+    text-decoration: underline;
+}

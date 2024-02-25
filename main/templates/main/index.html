@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'main/style.css' %}">
+    <title>SiteSynth</title>
+</head>
+<body>
+        <h1 id="header">SiteSynth</h1>
+        <!-- Get input from user with enter button -->
+        <form action="{% url 'search' %}" method="POST" id="form">
+            {% csrf_token %}
+            <span role="textbox" class="textarea" id='pseudoinput' contenteditable style="font-size: 20px;"></span>
+            <button onclick="getText()" id="theButton" style="background:linear-gradient(315deg, rgb(9, 94, 143), rgb(113, 236, 255));border-radius: 7px;margin:auto;display: block;margin-top: 5px; width:10vw; border-style:hidden;">→</button>
+            <input type="text" name="search" placeholder="Enter your prompt" id="in" style="visibility: hidden;">
+            <input type="submit" value="submit" id="submit" style="visibility: hidden;">
+        </form>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+
+        <footer>
+            <p>Download the previous source code <a href="{% static 'main/index.html' %}" download>here</a></p>
+        </footer>
+
+        <script>
+            var string;
+            function getText() {
+                string = document.getElementById('pseudoinput').innerHTML;
+                document.getElementById('in').setAttribute('value', string);
+                // Submit the form
+                document.getElementById('submit').click();
+            }
+            // Add event listener to the input field
+            document.getElementById('pseudoinput').addEventListener('keydown', function(event) {
+                if (event.keyCode === 13) { // If enter is pressed
+                    getText();
+                }
+            });
+         </script>
+</body>
+</html>
