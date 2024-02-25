@@ -2,3 +2,5 @@ cohere==4.50
 Django==4.2.4
 python-dotenv==1.0.1
 Werkzeug==3.0.1
+django-storages==1.14.2
+boto3==1.34.49
